@@ -1,0 +1,281 @@
+:root {
+  --navy: #0f1f4d;
+  --navy-dark: #0b1738;
+  --gold: #c9a24b;
+  --gold-light: #e6c777;
+  --line: #d9c58a;
+  --text: #14234f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e9e9ec;
+  color: var(--text);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 980px;
+  background: #fff;
+  padding: 24px 28px 20px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  flex: 0 0 auto;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 4px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--gold-light);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.logo-top {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.logo-icon {
+  font-size: 34px;
+  margin: 2px 0;
+}
+.logo-bottom {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.header-text {
+  border-left: 3px solid var(--gold);
+  padding-left: 24px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-family: "Oswald", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(26px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--navy);
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: clamp(16px, 2.6vw, 28px);
+  color: #333;
+}
+.dot {
+  margin: 0 6px;
+}
+
+.gold-line {
+  height: 3px;
+  background: var(--gold);
+  margin: 18px 0;
+}
+.gold-line.thin {
+  height: 2px;
+  margin: 4px 0 14px;
+}
+
+/* Table */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--line);
+  table-layout: fixed;
+}
+
+.menu-table thead th {
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: clamp(14px, 2.4vw, 24px);
+  font-weight: 800;
+  padding: 12px 6px;
+  border-right: 1px solid var(--gold);
+}
+
+.menu-table td {
+  border: 1px solid var(--line);
+  text-align: center;
+  padding: 14px 8px;
+  font-weight: 700;
+  font-size: clamp(13px, 2vw, 22px);
+  color: var(--navy);
+  line-height: 1.25;
+  vertical-align: middle;
+}
+
+.menu-table td.day {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  color: #222;
+}
+
+.menu-table tbody tr:nth-child(even) td {
+  background: #fffdf6;
+}
+
+/* Section titles */
+.section-title {
+  margin: 28px 0 0;
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 800;
+  color: var(--navy);
+}
+
+/* Prices */
+.prices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+.price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.price-list li {
+  padding: 7px 0;
+  font-size: clamp(14px, 2vw, 21px);
+}
+.price-label {
+  color: #222;
+  font-weight: 700;
+}
+.price-list strong {
+  color: var(--navy);
+}
+
+/* Order box */
+.order-box {
+  border: 1px solid #c8c8c8;
+  border-left: 8px solid var(--navy);
+  padding: 12px 20px;
+  font-size: clamp(14px, 2vw, 21px);
+}
+.order-box p {
+  margin: 8px 0;
+}
+.order-box a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+/* Footer */
+.greeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  font-size: clamp(20px, 3.4vw, 38px);
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--navy);
+  text-align: center;
+}
+.swoosh {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  border-radius: 3px;
+}
+.swoosh.flip {
+  background: linear-gradient(270deg, transparent, var(--gold));
+}
+
+/* Mobile: each day becomes a card */
+@media (max-width: 680px) {
+  .sheet {
+    padding: 16px 14px;
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header-text {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .menu-table,
+  .menu-table tbody,
+  .menu-table tr,
+  .menu-table td {
+    display: block;
+    width: 100%;
+  }
+  .menu-table thead {
+    display: none;
+  }
+  .menu-table tr {
+    margin-bottom: 14px;
+    border: 2px solid var(--line);
+  }
+  .menu-table td {
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  .menu-table td.day {
+    background: var(--navy) !important;
+    color: var(--gold-light);
+    font-size: 18px;
+  }
+  .menu-table td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  .prices {
+    grid-template-columns: 1fr;
+  }
+  .swoosh {
+    display: none;
+  }
+}
+
+/* Print nicely on A4 */
+@media print {
+  body {
+    background: #fff;
+  }
+  .page {
+    padding: 0;
+  }
+  .sheet {
+    box-shadow: none;
+    max-width: none;
+  }
+}
